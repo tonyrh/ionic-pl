@@ -1,0 +1,55 @@
+<!-- 
+  This template gets placed in the Pet tab's <ion-nav-view> directive.
+  It was wired up in the app config (app.js) 
+  The 'pets' data comes from its $scope within PetIndexCtrl (controller.js)
+-->
+<ion-view title="Eventi" right-buttons="rightButtons">
+  <ion-content has-header="true" has-padding="true">
+
+      <ion-refresher
+        pulling-text="Pull to refresh..."
+        on-refresh="doRefresh()"
+        refreshing-icon="ion-loading-c">       
+      </ion-refresher>
+
+      <div masonry column-width="320" masonry-options="{  isFitWidth: true }" class="masonry">
+
+        <div class="masonry-brick list card" ng-repeat="pet in pets">
+
+          <div class="item item-avatar" ng-switch on="pet.type">
+            <img src="img/music.png" ng-switch-when="1">
+            <img src="img/sport.png" ng-switch-when="2">
+            <img src="img/film.png" ng-switch-when="3">
+            <img src="img/calendario.png" ng-switch-default>
+            <h2>{{pet.title}}</h2>
+            <p>{{pet.start_date}}<span ng-if="pet.start_time != '00:00:00'"> ore {{pet.start_time|trim}}</span><span ng-if="pet.end_date != '0000-00-00'"> - {{pet.end_date}}</span></p>
+          </div>
+
+          <div class="item item-body">
+            <img class="full-image" src="{{pet.photo}}" ng-if="pet.photo">
+            <p ng-if="pet.photo">
+               <span ng-bind-html="pet.description"></span>
+            </p>
+            <p ng-if="!pet.photo" class="no-top-padding">
+               <span ng-bind-html="pet.description"></span>
+            </p>
+          </div>
+
+          <div class="item item-icon-left assertive">
+            <i class="icon ion-map"></i>
+            {{pet.location}}
+          </div>
+
+        </div> <!-- masonry-brick -->
+      
+      </div> <!-- masonry -->
+
+    <!-- 
+    <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="addEventi()" distance="10%"></ion-infinite-scroll>
+    -->
+
+    <div class="tony">
+    </div>
+
+  </ion-content>
+</ion-view>

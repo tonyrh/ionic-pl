@@ -1,6 +1,4 @@
-ionic-angular-cordova-seed
+Un piccolo esperimento con ionic framework
 ==========================
 
-The perfect starting point for an Ionic project.
-
-- [Ionic Tutorials](http://ionicframework.com/tutorials/)
+Anche un'occasione per imparare git...

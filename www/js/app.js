@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.services', 'starter.controllers', 'wu.masonry'])
+angular.module('starter', ['ionic', 'starter.services', 'starter.controllers', 'wu.masonry', 'ionic.service.loading', 'leaflet-directive'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -23,9 +23,9 @@ angular.module('starter', ['ionic', 'starter.services', 'starter.controllers', '
     })
 
     .state('pet-detail', {
-      url: '/pet/:petId',
+      url: '/pets/:petId',
       templateUrl: 'templates/pet-detail.html',
-      controller: 'PetDetailCtrl'
+      controller: 'MapCtrl'
     });
 
   // if none of the above states are matched, use this as the fallback

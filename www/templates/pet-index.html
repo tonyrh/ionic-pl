@@ -12,7 +12,7 @@
         refreshing-icon="ion-loading-c">       
       </ion-refresher>
 
-      <div masonry column-width="320" masonry-options="{  isFitWidth: true }" class="masonry">
+      <div masonry column-width="1" masonry-options="{  isFitWidth: true }" class="masonry">
 
         <div class="masonry-brick list card" ng-repeat="pet in pets">
 
@@ -35,10 +35,10 @@
             </p>
           </div>
 
-          <div class="item item-icon-left assertive">
+          <a class="item item-icon-left assertive" href="#/pets/{{pet.id}}">
             <i class="icon ion-map"></i>
             {{pet.location}}
-          </div>
+          </a>
 
         </div> <!-- masonry-brick -->
       

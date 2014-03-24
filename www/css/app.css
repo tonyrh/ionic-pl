@@ -49,3 +49,97 @@
 .masonry {
   margin: 0 auto;
 }
+
+/* iPhone 5 in landscape */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) 
+and (orientation : landscape) { 
+
+	.card {
+		max-width: 264px;
+	}
+
+	.item-body {
+		width: 264px;
+	}
+
+}
+
+/* iPhone 2G-4S in landscape */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) 
+and (orientation : landscape) { 
+
+	.card {
+		max-width: 220px;
+	}
+
+	.item-body {
+		width: 220px;
+	}
+
+}
+
+/* tablet with width=600px in portrait */
+@media only screen 
+and (min-device-width : 600px) 
+and (max-device-width : 601px) 
+and (orientation : portrait) { 
+
+	.card {
+		max-width: 280px;
+	}
+
+	.item-body {
+		width: 280px;
+	}
+
+}
+
+/* tablet with width=800px in portrait */
+@media only screen 
+and (min-device-width : 603px) 
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio: 1.3) { 
+
+	.card {
+		max-width: 280px;
+	}
+
+	.item-body {
+		width: 280px;
+	}
+
+}
+
+/* phone with width=800px in portrait */
+@media only screen 
+and (min-device-width : 533px) 
+and (max-device-width : 534px) 
+and (orientation : landscape) { 
+
+	.card {
+		max-width: 240px;
+	}
+
+	.item-body {
+		width: 240px;
+	}
+
+}
+
+.mycard {
+	z-index: 99;
+	position: fixed;
+	top: 49px;
+	left: 5px;
+	min-width: 240px; 
+	margin: 0px;
+}
+
+
+.scroll, .angular-leaflet-map {
+  height: 100%;
+}

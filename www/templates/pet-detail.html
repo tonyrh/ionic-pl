@@ -4,9 +4,26 @@
   The PetCtrl pulls data from the Pets service (service.js)
   The Pets service returns an array of pet data
 -->
-<ion-view title="{{pet.title}}">
-  <ion-content has-header="true" padding="true">
-    <p>{{ pet.description }}</p>
-    <p><a class="button button-small icon ion-arrow-left-b" href="#/tab/pets"> All Pets</a></p>
+<ion-view title="Map">
+  <ion-content has-header="true">
+ 	<leaflet defaults="map.defaults" center="map.center" markers="markers"></leaflet>
+
+
+
   </ion-content>
+
+   		<div class="card mycard">
+
+          <div class="item item-avatar" ng-switch on="pet.type">
+            <img src="img/music.png" ng-switch-when="1">
+            <img src="img/sport.png" ng-switch-when="2">
+            <img src="img/film.png" ng-switch-when="3">
+            <img src="img/calendario.png" ng-switch-default>
+            <h2>{{pet.title}}</h2>
+            <p>{{pet.start_date}}<span ng-if="pet.start_time != '00:00:00'"> ore {{pet.start_time|trim}}</span><span ng-if="pet.end_date != '0000-00-00'"> - {{pet.end_date}}</span></p>
+            <h3>{{pet.location}}</h3>
+          </div>
+
+        </div>
+
 </ion-view>
